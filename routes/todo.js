@@ -1,15 +1,21 @@
 var express = require('express');
-var router = express.Router();
-
+const router = express.Router();
 const knex = require('../db/knex');
+
+
 /* GET todo listing. */
-router.get('/', function(req, res, next) {
+router.get('/', (req, res) => {
   knex('todo')
   .select()
   .then(todos => {
     res.render('all', { todos: todos });
   }); 
 });
+
+router.get('/new', (req, res) => {
+  res.render('new');
+});
+
 
 module.exports = router;
  
