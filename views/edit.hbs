@@ -1,5 +1,5 @@
 
-<form class="form" action="/todo" method="post">
+<form class="form" action="/todo/{{id}}?_method=PUT" method="post">
   <div class="form-group">
     <label for="title">Title</label>
     <input value="{{title}}" type="text" class="form-control" id="title" placeholder="Enter in todo" name="title">
